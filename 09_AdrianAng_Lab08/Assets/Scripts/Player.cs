@@ -1,10 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     public float speed;
+
+    public static int Score;
+    public GameObject ScoreText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +25,13 @@ public class Player : MonoBehaviour
 
         transform.position = transform.position + new Vector3(0 , verticalInput * speed * Time.deltaTime, 0);
 
-      
+    }
 
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag.Equals("Obstacle"))
+        {
+            SceneManager.LoadScene("GameOverScene");
+        }
     }
 }
