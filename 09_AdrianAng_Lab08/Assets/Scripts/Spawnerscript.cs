@@ -5,6 +5,8 @@ using UnityEngine;
 public class Spawnerscript : MonoBehaviour
 {
     public GameObject SpawnObject;
+    public GameObject SpawnObject1;
+    public GameObject SpawnObject2;
     float PositionY;
 
     // Start is called before the first frame update
