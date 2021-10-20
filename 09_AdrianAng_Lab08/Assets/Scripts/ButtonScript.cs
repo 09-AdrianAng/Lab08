@@ -20,6 +20,6 @@ public class ButtonScript : MonoBehaviour
 
     public void OnRestartClick()
     {
-        SceneManager.LoadScene("GameOverScene");
+        SceneManager.LoadScene("SampleScene");
     }
 }

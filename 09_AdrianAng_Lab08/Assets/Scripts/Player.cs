@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
 
         transform.position = transform.position + new Vector3(0 , verticalInput * speed * Time.deltaTime, 0);
 
+        ScoreText.GetComponent<Text>().text = "Score:" + Score;
+
     }
 
     void OnCollisionEnter(Collision other)

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreScript : MonoBehaviour
 {
@@ -14,5 +15,14 @@ public class ScoreScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            Player.Score++;
+            Destroy(other.gameObject);
+        }
     }
 }
